@@ -74,12 +74,12 @@ function handleEdit(li, todo, user, duration, dateDue, priority) {
 }
 
 
-function sortTasks(isAscending) {
+function sortTasks(isAscending) {   //sorting a list based on priority
   const tasks = document.querySelectorAll('#tasks li');
-  const tasksArray = Array.from(tasks);
+  const tasksArray = Array.from(tasks); //converting  the list to an array
   
   tasksArray.sort((a, b) => {
-    const priorityA = a.getAttribute('data-priority');
+    const priorityA = a.getAttribute('data-priority');   //accessing the data attribute
     const priorityB = b.getAttribute('data-priority');
     
     const priorityMap = { 'high': 1, 'medium': 2, 'low': 3 };
@@ -92,7 +92,7 @@ function sortTasks(isAscending) {
   });
 
   const taskList = document.querySelector('#tasks');
-  taskList.innerHTML = '';
+  taskList.innerHTML = '';    //clears the current list
   
   tasksArray.forEach(task => {
     taskList.appendChild(task);
